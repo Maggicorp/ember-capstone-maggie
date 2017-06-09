@@ -1,13 +1,12 @@
-import ENV from 'ember-capstone-maggie/config/environment';
-import ActiveModelAdapter from 'active-model-adapter';
-
 import Ember from 'ember';
+import AjaxService from 'ember-ajax/services/ajax';
 
-export default ActiveModelAdapter.extend({
+import ENV from 'ember-capstone-maggie/config/environment';
+
+export default AjaxService.extend({
   host: ENV.apiHost,
 
   auth: Ember.inject.service(),
-
   headers: Ember.computed('auth.credentials.token', {
     get () {
       let headers = {};
