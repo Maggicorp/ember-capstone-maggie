@@ -1,11 +1,11 @@
 <h2>Write a new Haiku</h2>
 <form class='form-group'
-{{!-- {{action 'poemCreate' newPoem on='submit'}} --}}
+{{action 'poemCreate' newPoem on='submit'}}
 >
   <div class='input-group'> {{input placeholder='Title' class='form-control' value=newPoem.title}}
-{{input placeholder='First Line' class='form-control' value=newPoem.firstLine}}
-{{input placeholder='Second Line' class='form-control' value=newPoem.secondLine}}
-{{input placeholder='Third Line' class='form-control' value=newPoem.thirdLine}}
+{{input placeholder='First Line' class='form-control' value=newPoem.firstline}}
+{{input placeholder='Second Line' class='form-control' value=newPoem.secondline}}
+{{input placeholder='Third Line' class='form-control' value=newPoem.thirdline}}
 <div class='input-group-btn'>
 <button type='submit' class="btn btn-primary" {{action 'submit'}}>
   Submit
