@@ -2,9 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    console.log('get all poems', this.get('store').findAll('Poem'))
-    return this.get('store').findAll('Poem');
-
+    console.log('get all poems', this.get('store').findAll('poem'))
+    return this.get('store').findAll('poem');
 },
   actions: {
     poemCreate (data){
