@@ -6,6 +6,6 @@ export default Ember.Component.extend({
      console.log('at poem show poemCreate in poem-show')
      console.log('here is the data', data)
      this.sendAction('poemCreate', data)
-   }
+   },
  }
 });

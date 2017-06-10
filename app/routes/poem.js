@@ -21,6 +21,18 @@ export default Ember.Route.extend({
         this.get('flashMessages')
         .danger('There was a problem. Please try again and write a new Haiku.');
       });
+  },
+  deletePoem(data) {
+    console.log('at poem delete in poem.js')
+    data.destroyRecord()
+    .then(() => {
+      this.get('flashMessages')
+      .success('Your poem is gone.');
+    })
+    .catch(() => {
+      this.get('flashMessages')
+      .danger('There was a problem, the poem persists');
+    });
   }
-  }
+}
 });
