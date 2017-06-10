@@ -21,7 +21,7 @@ export default Ember.Component.extend({
       let data =
       this.get('newPoem')
       console.log('data is', data)
-      this.sendAction('createList', data);
+      this.sendAction('poemCreate', data);
       this.set('newPoem', null);
     }
   }
