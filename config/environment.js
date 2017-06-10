@@ -52,7 +52,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/ember-capstone-maggie';
    ENV.locationType = 'hash';
-   ENV.apiHost = 'https://lit-citadel-67931.herokuapp.com/';
+   ENV.apiHost = 'https://lit-citadel-67931.herokuapp.com';
  }
 
   return ENV;
