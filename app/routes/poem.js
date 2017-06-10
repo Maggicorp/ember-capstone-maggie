@@ -9,9 +9,18 @@ export default Ember.Route.extend({
     poemCreate (data){
       console.log('at poemCreate in poem.js')
       console.log(this.get('store'))
-      let newPoem = this.get('store').createRecord('poem', data)
+      let newPoem = this.
+      get('store').createRecord('poem', data)
       console.log('new poem', newPoem)
       newPoem.save()
+      .then(() => {
+        this.get('flashMessages')
+        .success('You wrote a Haiku! Your Haiku is saved in your list of poems.');
+      })
+      .catch(() => {
+        this.get('flashMessages')
+        .danger('There was a problem. Please try again and write a new Haiku.');
+      });
   }
   }
 });
