@@ -5,6 +5,14 @@ export default Ember.Route.extend({
     console.log('get all poems', this.get('store').findAll('Poem'))
     return this.get('store').findAll('Poem');
 },
+noHaiku: Ember.computed('poem', function(){
+  console.log('store is', this.get('store'))
+  if(this.get('poem') === undefined){
+    return true
+  } else {
+    return false
+  }
+}),
   actions: {
     poemCreate (data){
       console.log('at poemCreate in poem.js')

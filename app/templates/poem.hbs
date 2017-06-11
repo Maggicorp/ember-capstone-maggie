@@ -1,4 +1,8 @@
-{{poem-show poemCreate='poemCreate'}}
+{{!-- {{poem-show poemCreate='poemCreate'}} --}}
+
+<h2>My Haiku</h2>
+
+{{poem-show}}
 
 {{#each model as |poem|}}
   {{all-poems-view poem=poem deletePoem='deletePoem'}}

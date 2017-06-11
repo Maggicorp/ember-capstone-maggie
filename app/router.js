@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('change-password');
   // this.route('users');
   this.route('poem-edit', { path: 'poem/:poem_id/edit'});
+  this.route('create', { path: 'poem/create'});
 });
 
 export default Router;
