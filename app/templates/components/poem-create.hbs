@@ -1,9 +1,13 @@
 <div class="create">
 <h2>Write a new Haiku</h2>
-<form class='form-group'> <div class='input-group'> {{input placeholder='Title' class='form-control' value=newPoem.title}}
+<form class='form-group'> <div class='input-group'> {{input placeholder='Optional Title' class='form-control' value=newPoem.title}}
+  <p> Traditionally, a haiku does not have a title, but you can use one if you like</p>
 {{input placeholder='First Line' class='form-control' value=newPoem.firstline}}
+<p> First line is often 5 syllables</p>
 {{input placeholder='Second Line' class='form-control' value=newPoem.secondline}}
+<p> Second line is often 7 syllables</p>
 {{input placeholder='Third Line' class='form-control' value=newPoem.thirdline}}
+  <p> Third line is often 5 syllables</p>
 <div class='input-group-btn'>
 <button type='submit' class="btn btn-primary" {{action 'submit'}}>
   Submit
