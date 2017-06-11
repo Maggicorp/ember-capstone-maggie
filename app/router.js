@@ -9,9 +9,10 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('poem');
   this.route('sign-up');
-this.route('sign-in');
-this.route('change-password');
-// this.route('users');
+  this.route('sign-in');
+  this.route('change-password');
+  // this.route('users');
+  this.route('poem-edit', { path: 'poem/:poem_id/edit'});
 });
 
 export default Router;

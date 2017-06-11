@@ -1,0 +1,17 @@
+<div class="edit">
+<h3> Edit this Haiku </h3>
+<form class='form-group'> <div class='input-group'>
+{{input placeholder='Title (optional)' class='form-control' value=poem.title}}
+{{input placeholder='first line' class='form-control' value=poem.firstline}}
+{{input placeholder='second line' class='form-control' value=poem.secondline}}
+{{input placeholder='third line' class='form-control' value=poem.thirdline}}
+<div class='input-group-btn'>
+<button type='submit' class="btn btn-primary" {{action 'edit'}}>
+  Submit
+</button>
+</div>
+</div>
+</form>
+
+{{#link-to 'poem'}}<button>Back</button>{{/link-to}}
+</div>
