@@ -1,9 +1,15 @@
 {{!-- {{poem-show poemCreate='poemCreate'}} --}}
 
+<div class='my-haiku'>
 <h2>My Haiku</h2>
 
 {{poem-show}}
 
+<div class="masory">
 {{#each model as |poem|}}
+<div class="box">
   {{all-poems-view poem=poem deletePoem='deletePoem'}}
+</div>
 {{/each}}
+</div>
+</div>

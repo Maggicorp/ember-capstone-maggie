@@ -1,10 +1,9 @@
 
 <div class="haiku">
-  <h3>{{poem.title}}</h3>
+  <h4>{{poem.title}}</h4>
   <h5>{{poem.firstline}}</h5>
   <h5>{{poem.secondline}}</h5>
   <h5>{{poem.thirdline}}</h5>
-<br>
 <br>
   <button type="button" class="btn btn-danger btn-sm" {{action 'deletePoem'}}>Delete</button>
     {{#link-to 'poem-edit' poem}}<button type="button" class="btn btn-info btn-sm">Edit</button>{{/link-to}}

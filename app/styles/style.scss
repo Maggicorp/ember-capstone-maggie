@@ -2,7 +2,9 @@ body {
   background-color: #FF8C94;
   font-family: 'Josefin Slab', serif;
 }
-
+.box {
+  // background-color: purple;
+}
 .container {
   background-color: #F9CDAD ;
   margin: 15px auto;
@@ -10,18 +12,31 @@ body {
   padding: 20px;
 
 }
+.my-haiku {
+  // background-color: orange;
+}
+
+.masory {
+  column-count: 3;
+  column-gap: 1em;
+  // background-color: yellow;
+}
 
 .haiku {
-  background-color: white;
+  text-align: center;
   margin: 5px;
   border: 2px solid white;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   padding-top: 5px;
+  // display: inline-block;
+  // min-width: 100px;
+  // min-height: 40px;
+  background-color: #eee;
   display: inline-block;
-  float: left;
-  min-width: 100px;
-  min-height: 40px;
+  margin: 0 0 1em;
+  width: 100%;
+  box-shadow: 2px 2px 4px 0 #ccc;
 }
 
 .all-haiku {
@@ -46,3 +61,11 @@ body {
   padding: 20px;
   padding-top: 5px;
 }
+
+// .masonry {
+//   @media only screen and (min-width: 800px) {
+//         -moz-column-count: 2;
+//         -webkit-column-count: 2;
+//         column-count: 2;
+//     }
+// }
