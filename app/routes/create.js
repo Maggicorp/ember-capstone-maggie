@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   ajax2: Ember.inject.service(),
   actions: {
-    callapi () {
-      let word = 'incredible'
+    callapi (word) {
+      console.log('did word make it', word)
       let url = 'https://wordsapiv1.p.mashape.com/words/' + word + '/syllables'
       console.log('call api in create.js')
       return this.get('ajax2').request(url, {
@@ -13,8 +13,16 @@ export default Ember.Route.extend({
       })
       .then((response) => {
         console.log(response)
+        this.get('flashMessages')
+        .success('The number of syllabuls in the word ' + word + ' is ' + response.syllables.count, {
+  sticky: true
+});
       })
-      .catch(()=> {console.log('catch')})
+      .catch(()=> {
+        console.log('catch')
+        this.get('flashMessages')
+        .danger('You must type a word to get a syllables count')
+      })
     },
     poemCreate (data){
       console.log('at poemCreate in poem.js')

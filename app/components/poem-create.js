@@ -9,8 +9,10 @@ export default Ember.Component.extend({
   },
   actions: {
     callapi() {
-      console.log('call api'),
-      this.sendAction('callapi');
+      console.log('call api');
+      console.log(this.get('word'));
+      this.sendAction('callapi', this.get('word'));
+      this.set('word', null);
     },
     submit() {
       console.log('after on submit')
