@@ -2,11 +2,11 @@
 <h3> Edit this Haiku </h3>
 <form class='form-group'>
   <div class='input-group'>
-  {{input placeholder='Title (optional)' class='form-control' value=poem.title}}
-  {{input required=true placeholder='first line' class='form-control' value=poem.firstline}}
-  {{input required=true placeholder='second line' class='form-control' value=poem.secondline}}
-  {{input required=true placeholder='third line' class='form-control' value=poem.thirdline}}
-<div class='input-group-btn'>
+  {{input placeholder='Title (optional)' class='form-control' value=pastPoem.title}}
+  {{input required=true placeholder='first line' class='form-control' value=pastPoem.firstline}}
+  {{input required=true placeholder='second line' class='form-control' value=pastPoem.secondline}}
+  {{input required=true placeholder='third line' class='form-control' value=pastPoem.thirdline}}
+<div class='input-group-btn' {{action 'edit' on='submit'}}>
 <button type='submit' class="btn btn-primary" {{action 'edit' on="click"}}>
   Submit
 </button>

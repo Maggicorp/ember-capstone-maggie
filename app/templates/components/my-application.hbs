@@ -1,7 +1,7 @@
+{{!-- {{#unless isEditPoem}} --}}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     {{navbar-header}}
-
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
         {{#if isAuthenticated}}
@@ -22,7 +22,7 @@
     </div>
   </div>
 </nav>
-
+  {{!-- {{/unless}} --}}
 
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}

@@ -1,11 +1,16 @@
 import DS from 'ember-data';
+// import Validator from '../mixins/model-validator';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
   firstline: DS.attr('string'),
   secondline: DS.attr('string'),
   thirdline: DS.attr('string'),
-  // user: DS.belongsTo('user')
+  // validations: {
+  //   firstline: {
+  //     presence: true
+  //   }
+  //   }
 });
 
 
