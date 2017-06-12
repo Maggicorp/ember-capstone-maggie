@@ -1,7 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  ajax2: Ember.inject.service(),
   actions: {
+    callapi () {
+      let word = 'incredible'
+      let url = 'https://wordsapiv1.p.mashape.com/words/' + word + '/syllables'
+      console.log('call api in create.js')
+      return this.get('ajax2').request(url, {
+        method: 'GET',
+        headers: {'X-Mashape-Key': 'KT2RseIfS9mshXfUPbWLcFk8QDorp1P2tRmjsnE9qkK1Wrs6es'}
+      })
+      .then((response) => {
+        console.log(response)
+      })
+      .catch(()=> {console.log('catch')})
+    },
     poemCreate (data){
       console.log('at poemCreate in poem.js')
       console.log(this.get('store'))

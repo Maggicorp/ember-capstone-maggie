@@ -8,6 +8,10 @@ export default Ember.Component.extend({
     thirdline: null
   },
   actions: {
+    callapi() {
+      console.log('call api'),
+      this.sendAction('callapi');
+    },
     submit() {
       console.log('after on submit')
       let data =

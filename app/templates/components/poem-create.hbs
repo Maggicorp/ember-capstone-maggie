@@ -1,4 +1,9 @@
 <div class="create">
+
+  <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
+    API try
+  </button>
+
 <h2>Write a new Haiku</h2>
 <form class='form-group'> <div class='input-group'> {{input placeholder='Optional Title' class='form-control' value=newPoem.title}}
   <p> Traditionally, a haiku does not have a title, but you can use one if you like</p>
