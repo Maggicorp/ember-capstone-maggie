@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'div',
+  className: ['each-haiku'],
   actions: {
     deletePoem() {
           console.log('at delete poem');

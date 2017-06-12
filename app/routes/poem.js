@@ -2,17 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    console.log('get all poems', this.get('store').findAll('Poem'))
-    return this.get('store').findAll('Poem');
+    console.log('get all poems', this.get('store').findAll('Poem'));
+    const poems = this.store.findAll('Poem', {backgroundReload: true});
+    return poems;
 },
-noHaiku: Ember.computed('poem', function(){
-  console.log('store is', this.get('store'))
-  if(this.get('poem') === undefined){
-    return true
-  } else {
-    return false
-  }
-}),
+// noHaiku: Ember.computed('poem', function(){
+//   console.log('store is', this.get('store'))
+//   if(this.get('poem') === undefined){
+//     return true
+//   } else {
+//     return false
+//   }
+// }),
   actions: {
     poemCreate (data){
       console.log('at poemCreate in poem.js')
