@@ -10,6 +10,11 @@ export default Ember.Component.extend({
   actions: {
     callapi() {
       console.log('call api');
+      if (this.get('word') === null || this.get('word') === undefined) {
+        this.get('flashMessages')
+        .danger('Error, input a word to get the syllables count')
+        return
+      }
       console.log(this.get('word'));
       this.sendAction('callapi', this.get('word'));
       this.set('word', null);

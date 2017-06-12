@@ -21,7 +21,7 @@ export default Ember.Route.extend({
       .catch(()=> {
         console.log('catch')
         this.get('flashMessages')
-        .danger('You must type a word to get a syllables count')
+        .danger('You must type one, and only one, word to get a syllables count')
       })
     },
     poemCreate (data){
