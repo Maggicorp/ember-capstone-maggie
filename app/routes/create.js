@@ -18,7 +18,7 @@ export default Ember.Route.extend({
       })
       .then((response) => {
         // this.get('store').pushPayload(response)
-        // need to make a model for word count
+        // need to figure
         console.log(response)
         this.get('flashMessages')
         .success('The number of syllabuls in the word ' + word + ' is ' + response.syllables.count, {
