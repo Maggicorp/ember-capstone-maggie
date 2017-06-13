@@ -25,6 +25,9 @@ export default Ember.Component.extend({
     this.set('pastPoem.thirdline', thirdline)
   }.on("init"),
   actions: {
+    dataLine1() {
+      console.log('buttons')
+    },
     edit() {
       console.log('at update poem in each poem edit component, poem is', this.get('pastPoem'))
       let pastPoem = this.get('pastPoem')
