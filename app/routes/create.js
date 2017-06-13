@@ -1,5 +1,3 @@
-// import store from 'store.js'
-
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -9,60 +7,37 @@ export default Ember.Route.extend({
     callapi (word) {
       if (word === 'restart here') {
         let count = this.get('count')
-      console.log('restart - new count is', count)
       let length = count.length
-      console.log('length is', length)
       for (let i = 0; i < length; i++)
       {
           count.pop()
-          console.log(count)
       }
       return
     }
-      // let hat = 'hat'
-      // store.hat = hat
-      console.log('did word make it', word)
       let url = 'https://wordsapiv1.p.mashape.com/words/' + word + '/syllables'
-      console.log('call api in create.js');
       return this.get('ajax2').request(url, {
         method: 'GET',
         headers: {'X-Mashape-Key': 'KT2RseIfS9mshXfUPbWLcFk8QDorp1P2tRmjsnE9qkK1Wrs6es'}
       })
       .then((response) => {
-        console.log(response)
         let count = this.get('count')
-        console.log('count is before the add is', count)
         if (response.syllables.count === undefined)
         {
           response.syllables.count = 1
         }
         count.push(response.syllables.count);
-        console.log('count is', count)
-        count = count.filter(function(n){ return n !== undefined});
-        console.log('count after remove is', count)
-        console.log('sum is', count.reduce((a, b) => a + b, 0));
         let sum = count.reduce((a, b) => a + b, 0)
         $('.sword').append(' ' + response.word +
         ' : ' + response.syllables.count + '<br>')
-        $('.scount').text('The number of syllables in this line is approximately ' + sum);
-        this.get('flashMessages')
-//         .success('The number of syllabls in the word ' + word + ' is ' + response.syllables.count, {
-//         sticky: false,
-//         timeout: 5000,
-// });
+        $('.scount').text('Total line is: ' + sum);
       })
       .catch(()=> {
-        console.log('catch')
         this.get('flashMessages')
         .danger('Error, syllables counter did not recognize one of your words')
       })
     },
     poemCreate (data){
-      console.log('at poemCreate in poem.js')
-      console.log(this.get('store'))
-      let newPoem = this.
-      get('store').createRecord('poem', data)
-      console.log('new poem', newPoem)
+      let newPoem = this.get('store').createRecord('poem', data)
       newPoem.save()
       .then(() => {
         this.get('flashMessages')

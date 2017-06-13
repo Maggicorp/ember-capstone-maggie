@@ -2,6 +2,7 @@ body {
   background-color: #FF8C94;
   font-family: 'Josefin Slab', serif;
 }
+
 .sword {
   background-color: white;
   margin: 15px auto;
@@ -15,6 +16,7 @@ body {
   border-radius: 5px;
   padding: 10px;
 }
+
 .index {
   background-color: white;
   margin: 15px auto;
@@ -35,10 +37,16 @@ body {
   padding: 20px;
   border: 3px white solid;
   box-shadow: 2px 2px 4px 0 #ccc;
+  display: none;
+  float: left;
 }
 
 .my-haiku {
   // background-color: orange;
+}
+
+.wrap {
+
 }
 
 .masory {
@@ -77,6 +85,8 @@ body {
   border-radius: 10px;
   padding: 20px;
   padding-top: 5px;
+  float: left;
+  // width: 100%;
 }
 
 .edit {

@@ -7,69 +7,58 @@ export default Ember.Component.extend({
     secondline: null,
     thirdline: null
   },
+  onInit: function(){
+    $('.syllables').css('display', 'none')
+  }.on("init"),
   actions: {
     dataLine1() {
-      let newPoem = this.get('newPoem')
-      console.log('inside dataLine', newPoem.firstline)
+      let newPoem = this.get('newPoem');
       let word = newPoem.firstline
-      $('.sword').text('')
-      $('.scount').text('')
-      console.log('call api');
-      if (word === null || word === undefined) {
+      if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         return
       }
+      $('.sword').text('')
+      $('.scount').text('')
+      $('.syllables').css('display', 'block')
       this.sendAction('callapi', 'restart here')
       let wordArray = word.split(' ')
-      console.log(wordArray)
       let length = wordArray.length
-      console.log(length)
-      console.log(this.get('word'));
       for (let i=0; i < length; i++) {
       this.sendAction('callapi', wordArray[i]);
       }
     },
     dataLine2() {
       let newPoem = this.get('newPoem')
-      console.log('inside dataLine', newPoem.secondline)
       let word = newPoem.secondline
       $('.sword').text('')
       $('.scount').text('')
-      console.log('call api');
-      if (word === null || word === undefined) {
+      if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         return
       }
       this.sendAction('callapi', 'restart here')
       let wordArray = word.split(' ')
-      console.log(wordArray)
       let length = wordArray.length
-      console.log(length)
-      console.log(this.get('word'));
       for (let i=0; i < length; i++) {
       this.sendAction('callapi', wordArray[i]);
       }
     },
     dataLine3() {
       let newPoem = this.get('newPoem')
-      console.log('inside dataLine', newPoem.thirdline)
       let word = newPoem.thirdline
       $('.sword').text('')
       $('.scount').text('')
-      console.log('call api');
-      if (word === null || word === undefined) {
+      if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         return
       }
       this.sendAction('callapi', 'restart here')
       let wordArray = word.split(' ')
-      console.log(wordArray)
       let length = wordArray.length
-      console.log(length)
-      console.log(this.get('word'));
       for (let i=0; i < length; i++) {
       this.sendAction('callapi', wordArray[i]);
       }

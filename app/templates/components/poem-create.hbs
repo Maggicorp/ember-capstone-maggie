@@ -1,3 +1,4 @@
+<div class='wrap'>
 
 <div class="syllables">
   <h3>Syllables Count</h3>
@@ -5,15 +6,12 @@
   <div class='sword'></div>
   <h5>Whole Line</h5>
   <div class='scount'></div>
-  {{!-- <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
-    Syllables Count
-  </button> --}}
 </div>
 
 <div class="create">
 <h2>Write a new Haiku</h2>
 <form class='form-group'> <div class='input-group'> {{input placeholder='Optional Title' class='form-control' value=newPoem.title}}
-  <p> Traditionally, a haiku does not have a title, but you can use one if you like</p>
+  <p> Traditionally, a haiku does not have a title</p>
 {{input placeholder='First Line' class='form-control' value=newPoem.firstline}}
 <p> First line is often 5 syllables
   <button type='submit' class="btn btn-secondary" {{action 'dataLine1' on="click"}}> Count Syllables </button></p>
@@ -30,4 +28,6 @@
 </div>
 </div>
 </form>
+</div>
+
 </div>
