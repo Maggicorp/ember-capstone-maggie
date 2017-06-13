@@ -1,7 +1,9 @@
 <div class="create">
 <div class="syllables">
   {{input placeholder='input word here' class='form-control input-group' value=word}}
-  <p>Find out the number of syllables in a word</p>
+  <p>Find out the number of syllables in a word or line</p>
+  <div class='sword'>Syllables per Word:</div>
+  <div class='scount'></div>
   <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
     Syllables Count
   </button>
