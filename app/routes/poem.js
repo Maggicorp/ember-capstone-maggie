@@ -6,14 +6,6 @@ export default Ember.Route.extend({
     const poems = this.store.findAll('Poem', {backgroundReload: true});
     return poems;
 },
-// noHaiku: Ember.computed('poem', function(){
-//   console.log('store is', this.get('store'))
-//   if(this.get('poem') === undefined){
-//     return true
-//   } else {
-//     return false
-//   }
-// }),
   actions: {
     poemCreate (data){
       console.log('at poemCreate in poem.js')

@@ -22,9 +22,6 @@ export default Ember.Route.extend({
   },
   cancel () {
     console.log('at cancel in poem-edit')
-    // .then(()=> this.transitionTo('poem'))
-    // .catch(()=> {this.get('flashMessages')
-    // .danger('There was a problem. Please try again')})
     history.back();
   }
 }
