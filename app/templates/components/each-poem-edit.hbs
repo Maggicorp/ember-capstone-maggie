@@ -3,12 +3,16 @@
 <form class='form-group'>
   <div class='input-group'>
   {{input placeholder='Title (optional)' class='form-control' value=pastPoem.title}}
+  <p></p>
   {{input required=true placeholder='first line' class='form-control' value=pastPoem.firstline}}
-  <button type='submit' class="btn btn-primary" {{action 'dataLine1' on="click"}}> Get Syllables Count for this line </button>
+  <p>
+  <button type='submit' class="btn btn-secondary" {{action 'dataLine1' on="click"}}> Count Syllables </button></p>
   {{input required=true placeholder='second line' class='form-control' value=pastPoem.secondline}}
-  <button type='submit' class="btn btn-primary" {{action 'dataLine1' on="click"}}> Get Syllables Count for this line </button>
+  <p>
+  <button type='submit' class="btn btn-secondary" {{action 'dataLine2' on="click"}}> Count Syllables </button></p>
   {{input required=true placeholder='third line' class='form-control' value=pastPoem.thirdline}}
-  <button type='submit' class="btn btn-primary" {{action 'dataLine1' on="click"}}> Get Syllables Count for this line </button>
+  <p>
+  <button type='submit' class="btn btn-secondary" {{action 'dataLine3' on="click"}}> Count Syllables </button></p>
 <div class='input-group-btn' {{action 'edit' on='submit'}}>
 <button type='submit' class="btn btn-primary" {{action 'edit' on="click"}}>
   Submit
