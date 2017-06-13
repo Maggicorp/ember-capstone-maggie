@@ -1,25 +1,28 @@
-<div class="create">
+
 <div class="syllables">
-  {{input placeholder='input word here' class='form-control input-group' value=word}}
-  <p>Find out the number of syllables in a word or line</p>
-  <h5>Syllables per Word:</h5>
+  <h3>Syllables Count</h3>
+  <h5>Individuals Words:</h5>
   <div class='sword'></div>
-  <h5>Syllables per Line</h5>
+  <h5>Whole Line</h5>
   <div class='scount'></div>
-  <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
+  {{!-- <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
     Syllables Count
-  </button>
+  </button> --}}
 </div>
 
+<div class="create">
 <h2>Write a new Haiku</h2>
 <form class='form-group'> <div class='input-group'> {{input placeholder='Optional Title' class='form-control' value=newPoem.title}}
   <p> Traditionally, a haiku does not have a title, but you can use one if you like</p>
 {{input placeholder='First Line' class='form-control' value=newPoem.firstline}}
-<p> First line is often 5 syllables</p>
+<p> First line is often 5 syllables
+  <button type='submit' class="btn btn-secondary" {{action 'dataLine1' on="click"}}> Count Syllables </button></p>
 {{input placeholder='Second Line' class='form-control' value=newPoem.secondline}}
-<p> Second line is often 7 syllables</p>
+<p> Second line is often 7 syllables
+  <button type='submit' class="btn btn-secondary" {{action 'dataLine2' on="click"}}> Count Syllables </button></p>
 {{input placeholder='Third Line' class='form-control' value=newPoem.thirdline}}
-  <p> Third line is often 5 syllables</p>
+  <p> Third line is often 5 syllables
+<button type='submit' class="btn btn-secondary" {{action 'dataLine3' on="click"}}> Count Syllables </button></p>
 <div class='input-group-btn'>
 <button type='submit' class="btn btn-primary" {{action 'submit'}}>
   Submit

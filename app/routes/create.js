@@ -32,6 +32,10 @@ export default Ember.Route.extend({
         console.log(response)
         let count = this.get('count')
         console.log('count is before the add is', count)
+        if (response.syllables.count === undefined)
+        {
+          response.syllables.count = 1
+        }
         count.push(response.syllables.count);
         console.log('count is', count)
         count = count.filter(function(n){ return n !== undefined});
@@ -42,15 +46,15 @@ export default Ember.Route.extend({
         ' : ' + response.syllables.count + '<br>')
         $('.scount').text('The number of syllables in this line is approximately ' + sum);
         this.get('flashMessages')
-        .success('The number of syllabls in the word ' + word + ' is ' + response.syllables.count, {
-        sticky: false,
-        timeout: 5000,
-});
+//         .success('The number of syllabls in the word ' + word + ' is ' + response.syllables.count, {
+//         sticky: false,
+//         timeout: 5000,
+// });
       })
       .catch(()=> {
         console.log('catch')
         this.get('flashMessages')
-        .danger('Error, syllables counter did not recognize one of you words')
+        .danger('Error, syllables counter did not recognize one of your words')
       })
     },
     poemCreate (data){
