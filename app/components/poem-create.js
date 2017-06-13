@@ -15,8 +15,15 @@ export default Ember.Component.extend({
         .danger('Error, input a word to get the syllables count')
         return
       }
+      let word = this.get('word')
+      let wordArray = word.split(' ')
+      console.log(wordArray)
+      let length = wordArray.length
+      console.log(length)
       console.log(this.get('word'));
-      this.sendAction('callapi', this.get('word'));
+      for (let i=0; i < length; i++) {
+      this.sendAction('callapi', wordArray[i]);
+      }
       this.set('word', null);
     },
     submit() {

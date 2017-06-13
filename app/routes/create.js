@@ -2,20 +2,27 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   ajax2: Ember.inject.service(),
+  totalSyl: Ember.computed( function() {
+    let count = 0
+    return count
+  }),
   actions: {
     callapi (word) {
       console.log('did word make it', word)
       let url = 'https://wordsapiv1.p.mashape.com/words/' + word + '/syllables'
-      console.log('call api in create.js')
+      console.log('call api in create.js');
+      console.log('computer is', this.get('totalSyl'))
       return this.get('ajax2').request(url, {
         method: 'GET',
         headers: {'X-Mashape-Key': 'KT2RseIfS9mshXfUPbWLcFk8QDorp1P2tRmjsnE9qkK1Wrs6es'}
       })
       .then((response) => {
+        // this.get('store').pushPayload(response)
+        // need to make a model for word count
         console.log(response)
         this.get('flashMessages')
         .success('The number of syllabuls in the word ' + word + ' is ' + response.syllables.count, {
-  sticky: true
+        sticky: true,
 });
       })
       .catch(()=> {
