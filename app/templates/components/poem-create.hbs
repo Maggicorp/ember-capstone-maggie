@@ -2,7 +2,9 @@
 <div class="syllables">
   {{input placeholder='input word here' class='form-control input-group' value=word}}
   <p>Find out the number of syllables in a word or line</p>
-  <div class='sword'>Syllables per Word:</div>
+  <h5>Syllables per Word:</h5>
+  <div class='sword'></div>
+  <h5>Syllables per Line</h5>
   <div class='scount'></div>
   <button type='api' class="btn btn-primary" {{action 'callapi' on="click"}}>
     Syllables Count

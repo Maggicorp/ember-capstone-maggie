@@ -7,6 +7,18 @@ export default Ember.Route.extend({
   count: [],
   actions: {
     callapi (word) {
+      if (word === 'restart here') {
+        let count = this.get('count')
+      console.log('restart - new count is', count)
+      let length = count.length
+      console.log('length is', length)
+      for (let i = 0; i < length; i++)
+      {
+          count.pop()
+          console.log(count)
+      }
+      return
+    }
       // let hat = 'hat'
       // store.hat = hat
       console.log('did word make it', word)
@@ -26,8 +38,8 @@ export default Ember.Route.extend({
         console.log('count after remove is', count)
         console.log('sum is', count.reduce((a, b) => a + b, 0));
         let sum = count.reduce((a, b) => a + b, 0)
-        $('.sword').append('<br> ' + response.word +
-        ' : ' + response.syllables.count + '\n\t ')
+        $('.sword').append(' ' + response.word +
+        ' : ' + response.syllables.count + '<br>')
         $('.scount').text('The number of syllables in this line is approximately ' + sum);
         this.get('flashMessages')
         .success('The number of syllabls in the word ' + word + ' is ' + response.syllables.count, {

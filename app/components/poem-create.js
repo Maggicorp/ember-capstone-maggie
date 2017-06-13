@@ -9,12 +9,15 @@ export default Ember.Component.extend({
   },
   actions: {
     callapi() {
+      $('.sword').text('')
+      $('.scount').text('')
       console.log('call api');
       if (this.get('word') === null || this.get('word') === undefined) {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         return
       }
+      this.sendAction('callapi', 'restart here')
       let word = this.get('word')
       let wordArray = word.split(' ')
       console.log(wordArray)
