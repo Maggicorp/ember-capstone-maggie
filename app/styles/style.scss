@@ -3,16 +3,20 @@ body {
   font-family: 'Josefin Slab', serif;
 }
 
+.empty {
+  width: 10px;
+}
+
 .sword {
   background-color: white;
-  margin: 15px auto;
+  margin: 5px auto;
   border-radius: 5px;
   padding: 10px;
 }
 
 .scount {
   background-color: white;
-  margin: 15px auto;
+  margin: 5px auto;
   border-radius: 5px;
   padding: 10px;
 }
@@ -23,6 +27,7 @@ body {
   border-radius: 10px;
   padding: 20px;
 }
+
 .container {
   background-color: #F9CDAD ;
   margin: 15px auto;
@@ -30,23 +35,29 @@ body {
   padding: 20px;
 
 }
+
 .syllables {
+  text-align: center;
   background-color: lightblue ;
-  margin: 15px auto;
+  margin: 5px auto;
   border-radius: 10px;
   padding: 20px;
   border: 3px white solid;
   box-shadow: 2px 2px 4px 0 #ccc;
   display: none;
-  float: left;
+  // float: left;
 }
 
-.my-haiku {
-  // background-color: orange;
-}
-
-.wrap {
-
+.create {
+  text-align: center;
+  background-color: #A8E6CE;
+  margin: 5px auto;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  padding-top: 5px;
+  // float: left;
+  // width: 90%;
 }
 
 .masory {
@@ -78,16 +89,7 @@ body {
   margin-left: 30px;
 }
 
-.create {
-  background-color: #A8E6CE;
-  margin: 10px auto;
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 20px;
-  padding-top: 5px;
-  float: left;
-  // width: 100%;
-}
+
 
 .edit {
   background-color: #9DE0AD ;
