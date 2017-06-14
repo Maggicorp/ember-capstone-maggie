@@ -21,6 +21,7 @@ export default Ember.Component.extend({
       if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
+        $('.syllables').css('display', 'none')
         return
       }
       $('.sword').text('')
@@ -43,6 +44,7 @@ export default Ember.Component.extend({
       if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
+        $('.syllables').css('display', 'none')
         return
       }
       this.sendAction('callapi', 'restart here')
@@ -62,6 +64,7 @@ export default Ember.Component.extend({
       if (word === null || word === undefined || word === '') {
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
+        $('.syllables').css('display', 'none');
         return
       }
       this.sendAction('callapi', 'restart here')
@@ -88,6 +91,14 @@ export default Ember.Component.extend({
       this.set('newPoem.firstline', null);
       this.set('newPoem.secondline', null);
       this.set('newPoem.thirdline', null);
+    },
+    getTheme() {
+      console.log('in theme')
+      const themes = ['summer', 'trees', 'birds', 'sunshine', 'lakes', 'pond', 'snow', 'stone', 'winter', 'fall', 'autumn', 'rain', 'birds', 'deer', 'cold', 'hot', 'warm', 'moon', 'sun']
+      const themesLength = themes.length
+      const randNum = Math.floor(Math.random() * themesLength)
+      const newTheme = themes[randNum]
+      $('.theme').text(newTheme)
     }
   }
   })
