@@ -9,6 +9,10 @@ export default Ember.Component.extend({
   },
   onInit: function(){
     $('.syllables').css('display', 'none')
+    this.set('newPoem.title', null);
+    this.set('newPoem.firstline', null);
+    this.set('newPoem.secondline', null);
+    this.set('newPoem.thirdline', null);
   }.on("init"),
   actions: {
     dataLine1() {

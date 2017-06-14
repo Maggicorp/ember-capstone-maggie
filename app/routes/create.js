@@ -30,10 +30,16 @@ export default Ember.Route.extend({
         $('.sword').append(' ' + response.word +
         ' : ' + response.syllables.count + '<br>')
         $('.scount').text('Total line is: ' + sum);
+        $('.syllables').css('display', 'block')
+
       })
       .catch(()=> {
         this.get('flashMessages')
         .danger('Error, syllables counter did not recognize one of your words')
+        console.log('what is, it is zero', this.get('count').length )
+        if ( this.get('count').length === 0) {
+          $('.syllables').css('display', 'none')
+        }
       })
     },
     poemCreate (data){
