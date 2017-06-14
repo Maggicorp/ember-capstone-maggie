@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   model(){
     // console.log('get all poems', this.get('store').findAll('Poem'));
     const poems = this.store.findAll('Poem', {backgroundReload: true});
+    console.log('it the model the poesm are', poems)
     return poems;
 },
   actions: {
@@ -33,6 +34,13 @@ export default Ember.Route.extend({
       this.get('flashMessages')
       .danger('There was a problem, the poem persists');
     });
+  },
+  poemCount(){
+    let poems = this.store.findAll('Poem')
+    console.log('they are', this.get('model.length'))
+    console.log('they are', this.get('poems.length'))
+
+
   }
 }
 });

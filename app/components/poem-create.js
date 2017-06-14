@@ -22,6 +22,7 @@ export default Ember.Component.extend({
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         $('.syllables').css('display', 'none')
+
         return
       }
       $('.sword').text('')

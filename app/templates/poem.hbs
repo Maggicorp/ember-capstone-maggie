@@ -3,13 +3,20 @@
 <div class='my-haiku'>
 <h2>My Haiku</h2>
 
-{{poem-show}}
-
+{{#if model.length}}
+{{!-- {{poem-show}} --}}
 <div class="masory">
 {{#each model as |poem|}}
 <div class="box">
-  {{all-poems-view poem=poem deletePoem='deletePoem'}}
+  {{all-poems-view poem=poem deletePoem='deletePoem' poemCount='poemCount'}}
 </div>
 {{/each}}
 </div>
+{{else}}
+<div class="none">
+  <h3><span class='nature'>There are No Haiku</span></h3>
+ {{poem-show}}
+</div>
+{{/if}}
+
 </div>
