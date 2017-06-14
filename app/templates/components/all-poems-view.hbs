@@ -6,5 +6,13 @@
   <h5>{{poem.thirdline}}</h5>
 <br>
   <button type="button" class="btn btn-danger btn-sm" {{action 'deletePoem'}}>Delete</button>
+
     {{#link-to 'poem-edit' poem}}<button type="button" class="btn btn-info btn-sm">Edit</button>{{/link-to}}
+
+    {{#if poem.title}}
+  <a href="mailto:?subject=My%20Haiku:%20{{poem.title}}&amp;body={{poem.title}}%0D%0A%0D%0A{{poem.firstline}}%0D%0A{{poem.secondline}}%0D%0A{{poem.thirdline}}%0D%0A%0D%0AMade%20at%20https://maggicorp.github.io/ember-capstone-maggie/#/poem">Send mail</a>
+    {{else}}
+  <a href="mailto:?subject=My%20Haiku&amp;body=My%20Haiku%0D%0A%0D%0A{{poem.firstline}}%0D%0A{{poem.secondline}}%0D%0A{{poem.thirdline}}%0D%0AMade%20at%20https://maggicorp.github.io/ember-capstone-maggie/#/poem">Send mail</a>
+    {{/if}}
+
 </div>
