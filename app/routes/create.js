@@ -36,7 +36,7 @@ export default Ember.Route.extend({
       .catch(()=> {
         this.get('flashMessages')
         .danger('Error, syllables counter did not recognize one of your words')
-        console.log('what is, it is zero', this.get('count').length )
+        // console.log('what is, it is zero', this.get('count').length )
         if ( this.get('count').length === 0) {
           $('.syllables').css('display', 'none')
         }

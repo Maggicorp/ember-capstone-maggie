@@ -10,7 +10,7 @@ export default Ember.Route.extend({
     //   console.log('poem in transition ', this.get('store').get('poem'))
     // },
     callEditApi(word, displayline) {
-      console.log('at call edit api', word)
+      // console.log('at call edit api', word)
       if (word === 'restart here') {
         let count = this.get('count')
       let length = count.length
@@ -36,7 +36,7 @@ export default Ember.Route.extend({
         $(displayline).text('Syllables Count is ' + sum);
       })
       .catch(()=> {
-        console.log('error')
+        // console.log('error')
         this.get('flashMessages')
         .danger('Error, syllables counter did not recognize one of your words')
         if ( this.get('count').length === 0) {
@@ -45,7 +45,7 @@ export default Ember.Route.extend({
       })
     },
     editPoem(poem) {
-      console.log('at poem edit with', poem)
+      // console.log('at poem edit with', poem)
       poem.save()
       .then(() => {
         this.get('flashMessages')
@@ -58,7 +58,7 @@ export default Ember.Route.extend({
     });
   },
   cancel () {
-    console.log('at cancel in poem-edit')
+    // console.log('at cancel in poem-edit')
     history.back();
   }
 }

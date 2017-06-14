@@ -34,14 +34,7 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      let thisWord = wordArray[i]
-      let wordLength = thisWord.length
-      console.log('word length is', wordLength)
-      if(!thisWord.charAt(length).match(/[a-zA-Z]/)) {
-        console.log('it is NOT a letter ', thisWord.charAt(length) )
-        thisWord = thisWord.substring(0, wordLength-1);
-      }
-      this.sendAction('callEditApi', thisWord, displayline);
+      this.sendAction('callEditApi', wordArray[i], displayline);
       }
     },
     line2count() {

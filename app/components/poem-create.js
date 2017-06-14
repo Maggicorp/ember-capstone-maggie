@@ -68,7 +68,7 @@ export default Ember.Component.extend({
       }
     },
     submit() {
-      console.log('after on submit')
+      // console.log('after on submit')
       let data =
       this.get('newPoem')
       if(data.firstline === null || data.secondline === null || data.thirdline === null) {
@@ -76,7 +76,7 @@ export default Ember.Component.extend({
         .danger('Error, please include a valid input for all three lines')
         return
       }
-      console.log('data is', data)
+      // console.log('data is', data)
       this.sendAction('poemCreate', data);
       this.set('newPoem.title', null);
       this.set('newPoem.firstline', null);

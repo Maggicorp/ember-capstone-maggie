@@ -5,8 +5,8 @@ export default Ember.Component.extend({
   className: ['each-haiku'],
   actions: {
     deletePoem() {
-          console.log('at delete poem');
-          console.log(this.get('poem'))
+          // console.log('at delete poem');
+          // console.log(this.get('poem'))
           this.sendAction('deletePoem', this.get('poem'));
         },
     }

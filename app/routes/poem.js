@@ -2,17 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    console.log('get all poems', this.get('store').findAll('Poem'));
+    // console.log('get all poems', this.get('store').findAll('Poem'));
     const poems = this.store.findAll('Poem', {backgroundReload: true});
     return poems;
 },
   actions: {
     poemCreate (data){
-      console.log('at poemCreate in poem.js')
-      console.log(this.get('store'))
-      let newPoem = this.
-      get('store').createRecord('poem', data)
-      console.log('new poem', newPoem)
+      // console.log('at poemCreate in poem.js')
+      // console.log(this.get('store'))
+      let newPoem = this.get('store').createRecord('poem', data)
+      // console.log('new poem', newPoem)
       newPoem.save()
       .then(() => {
         this.get('flashMessages')
@@ -24,7 +23,7 @@ export default Ember.Route.extend({
       });
   },
   deletePoem(data) {
-    console.log('at poem delete in poem.js')
+    // console.log('at poem delete in poem.js')
     data.destroyRecord()
     .then(() => {
       this.get('flashMessages')
