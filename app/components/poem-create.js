@@ -30,7 +30,9 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callapi', wordArray[i]);
+        let thisWord = wordArray[i]
+        thisWord = thisWord.replace(/\W$/, "");
+      this.sendAction('callapi', thisWord);
       }
     },
     dataLine2() {
@@ -47,7 +49,9 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callapi', wordArray[i]);
+        let thisWord = wordArray[i]
+        thisWord = thisWord.replace(/\W$/, "");
+      this.sendAction('callapi', thisWord);
       }
     },
     dataLine3() {
@@ -64,7 +68,9 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callapi', wordArray[i]);
+        let thisWord = wordArray[i]
+        thisWord = thisWord.replace(/\W$/, "");
+        this.sendAction('callapi', thisWord);
       }
     },
     submit() {

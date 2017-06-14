@@ -35,11 +35,9 @@ export default Ember.Component.extend({
       let length = wordArray.length
       for (let i=0; i < length; i++) {
         let thisWord = wordArray[i]
-        console.log('thew word is', thisWord )
-        // thisWord = thisWord.replace(/\s$/, "");
-        //get rid of non word characters
+        console.log('a first the word is', thisWord )
         thisWord = thisWord.replace(/\W$/, "");
-        console.log('thew word is', thisWord )
+        console.log('after replacing character is it is', thisWord );
       this.sendAction('callEditApi', thisWord, displayline);
       }
     },
@@ -55,7 +53,11 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callEditApi', wordArray[i], displayline);
+        let thisWord = wordArray[i]
+        // console.log('a first the word is', thisWord )
+        thisWord = thisWord.replace(/\W$/, "");
+        // console.log('after replacing character is it is', thisWord );
+        this.sendAction('callEditApi', thisWord, displayline);
       }
     },
     line3count() {
@@ -70,7 +72,9 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callEditApi', wordArray[i], displayline);
+        let thisWord = wordArray[i]
+        thisWord = thisWord.replace(/\W$/, "");
+        this.sendAction('callEditApi', thisWord, displayline);
       }
     },
     edit() {
