@@ -34,7 +34,13 @@ export default Ember.Component.extend({
       let wordArray = word.split(' ')
       let length = wordArray.length
       for (let i=0; i < length; i++) {
-      this.sendAction('callEditApi', wordArray[i], displayline);
+        let thisWord = wordArray[i]
+        console.log('thew word is', thisWord )
+        // thisWord = thisWord.replace(/\s$/, "");
+        //get rid of non word characters
+        thisWord = thisWord.replace(/\W$/, "");
+        console.log('thew word is', thisWord )
+      this.sendAction('callEditApi', thisWord, displayline);
       }
     },
     line2count() {
