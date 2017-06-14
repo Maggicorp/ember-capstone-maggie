@@ -2,7 +2,27 @@ body {
   background-color: #FF8C94;
   font-family: 'Josefin Slab', serif;
 }
+.nature {
+  background-color: rgba(255,255,255,.75);
+  width: 100%;
+  border-radius: 5px;
+  padding: 4px;
+  color: black;
+}
 
+.picture {
+  text-align: center;
+  background-image: url('https://source.unsplash.com/category/nature/600x100');
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 10px;
+  border: 3px white solid;
+  box-shadow: 2px 2px 4px 0 #ccc;
+}
 // .title {
 //   padding-bottom: 10px;
 //   margin-bottom: 10px;

@@ -99,6 +99,9 @@ export default Ember.Component.extend({
       const randNum = Math.floor(Math.random() * themesLength)
       const newTheme = themes[randNum]
       $('.theme').text(newTheme)
+    },
+    getPicture () {
+      location.reload()
     }
   }
   })
