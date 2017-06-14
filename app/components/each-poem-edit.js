@@ -22,8 +22,50 @@ export default Ember.Component.extend({
     this.set('pastPoem.thirdline', thirdline)
   }.on("init"),
   actions: {
-    dataLine1() {
-      console.log('buttons')
+    line1count() {
+      let pastPoem = this.get('pastPoem');
+      let word = pastPoem.firstline
+      let displayline = '.count1'
+      if (word === null || word === undefined || word === '') {
+          $(displayline).text('Nothing to Count')
+        return
+      }
+      this.sendAction('callEditApi', 'restart here')
+      let wordArray = word.split(' ')
+      let length = wordArray.length
+      for (let i=0; i < length; i++) {
+      this.sendAction('callEditApi', wordArray[i], displayline);
+      }
+    },
+    line2count() {
+      let pastPoem = this.get('pastPoem');
+      let displayline = '.count2'
+      let word = pastPoem.secondline
+      if (word === null || word === undefined || word === '') {
+          $(displayline).text('Nothing to Count')
+        return
+      }
+      this.sendAction('callEditApi', 'restart here')
+      let wordArray = word.split(' ')
+      let length = wordArray.length
+      for (let i=0; i < length; i++) {
+      this.sendAction('callEditApi', wordArray[i], displayline);
+      }
+    },
+    line3count() {
+      let pastPoem = this.get('pastPoem');
+      let displayline = '.count3'
+      let word = pastPoem.thirdline
+      if (word === null || word === undefined || word === '') {
+          $(displayline).text('Nothing to Count')
+        return
+      }
+      this.sendAction('callEditApi', 'restart here')
+      let wordArray = word.split(' ')
+      let length = wordArray.length
+      for (let i=0; i < length; i++) {
+      this.sendAction('callEditApi', wordArray[i], displayline);
+      }
     },
     edit() {
       let pastPoem = this.get('pastPoem')
