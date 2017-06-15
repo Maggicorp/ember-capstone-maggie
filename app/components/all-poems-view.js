@@ -8,14 +8,14 @@ export default Ember.Component.extend({
           this.sendAction('deletePoem', this.get('poem'));
         },
       publish() {
-        let poem = this.get('poem')
-        this.set('poem.published', true)
-        this.sendAction('publish', this.get('poem'), 'published')
+        let poem = this.get('poem');
+        this.set('poem.published', true);
+        this.sendAction('publish', this.get('poem'), 'published');
       },
       unpublish() {
-        let poem = this.get('poem')
-        this.set('poem.published', false)
-        this.sendAction('publish', this.get('poem'), 'unpublished')
+        let poem = this.get('poem');
+        this.set('poem.published', false);
+        this.sendAction('publish', this.get('poem'), 'unpublished');
       }
     }
 });
