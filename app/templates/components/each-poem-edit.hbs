@@ -1,27 +1,35 @@
 <div class="edit">
 <h3> Edit this Haiku </h3>
+
 <form class='form-group'>
   <div class='input-group'>
   {{input placeholder='Title (optional)' class='form-control title' value=pastPoem.title}}
   <p>Title is optional  </p>
+
   {{input required=true placeholder='first line' class='form-control' value=pastPoem.firstline}}
   <p>
   <button type='submit' class="btn btn-secondary" {{action 'line1count' on="click"}}> Count Syllables </button>&nbsp; <span class='count1'> </span></p>
+
   {{input required=true placeholder='second line' class='form-control' value=pastPoem.secondline}}
   <p>
   <button type='submit' class="btn btn-secondary" {{action 'line2count' on="click"}}> Count Syllables </button>&nbsp;<span class='count2'></span></p>
+
   {{input required=true placeholder='third line' class='form-control' value=pastPoem.thirdline}}
   <p>
   <button type='submit' class="btn btn-secondary" {{action 'line3count' on="click"}}> Count Syllables </button>&nbsp;<span class='count3'></span></p>
+
 <div class='input-group-btn' {{action 'edit' on='submit'}}>
+
 <button type='submit' class="btn btn-primary" {{action 'edit' on="click"}}>
   Submit
 </button>
+
 </div>
 </div>
 </form>
 
-<button type='submit' class="btn btn-primary" {{action 'cancel' on="click"}}>
+<button type='submit' class="btn btn-danger" {{action 'cancel' on="click"}}>
   Back to Poems
 </button>
+
 </div>

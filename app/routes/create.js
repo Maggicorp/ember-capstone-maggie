@@ -3,17 +3,18 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   ajax2: Ember.inject.service(),
   count: [],
+
   actions: {
+
     callapi (word) {
       if (word === 'restart here') {
         let count = this.get('count')
-      let length = count.length
-      for (let i = 0; i < length; i++)
-      {
+        let length = count.length
+        for (let i = 0; i < length; i++) {
           count.pop()
+          }
+        return
       }
-      return
-    }
       let url = 'https://wordsapiv1.p.mashape.com/words/' + word + '/syllables'
       return this.get('ajax2').request(url, {
         method: 'GET',
@@ -21,10 +22,9 @@ export default Ember.Route.extend({
       })
       .then((response) => {
         let count = this.get('count')
-        if (response.syllables.count === undefined)
-        {
+        if (response.syllables.count === undefined) {
           response.syllables.count = 1
-        }
+          }
         count.push(response.syllables.count);
         let sum = count.reduce((a, b) => a + b, 0)
         $('.sword').append(' ' + response.word +
@@ -36,12 +36,12 @@ export default Ember.Route.extend({
       .catch(()=> {
         this.get('flashMessages')
         .danger('Error, syllables counter did not recognize one of your words')
-        // console.log('what is, it is zero', this.get('count').length )
         if ( this.get('count').length === 0) {
           $('.syllables').css('display', 'none')
-        }
+          }
       })
     },
+
     poemCreate (data){
       let newPoem = this.get('store').createRecord('poem', data)
       newPoem.save()

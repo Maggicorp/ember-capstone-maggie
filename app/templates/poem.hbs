@@ -1,14 +1,13 @@
-{{!-- {{poem-show poemCreate='poemCreate'}} --}}
+{{!-- {{#if isAuthenticated}} --}}
 
 <div class='my-haiku'>
 <h2>My Haiku</h2>
 
 {{#if model.length}}
-{{!-- {{poem-show}} --}}
 <div class="masory">
 {{#each model as |poem|}}
 <div class="box">
-  {{all-poems-view poem=poem deletePoem='deletePoem' poemCount='poemCount' publish='publish'}}
+  {{all-poems-view poem=poem deletePoem='deletePoem' publish='publish'}}
 </div>
 {{/each}}
 </div>
@@ -18,5 +17,8 @@
  {{poem-show}}
 </div>
 {{/if}}
-
 </div>
+{{!--
+{{else}}
+<h3> You must login to write a poem</h3>
+{{/if}} --}}

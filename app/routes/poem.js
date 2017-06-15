@@ -1,18 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  // auth: Ember.inject.service(),
   model(){
-    // console.log('get all poems', this.get('store').findAll('Poem'));
     const poems = this.store.findAll('Poem', {backgroundReload: true});
-    // console.log('it the model the poems are', poems)
     return poems;
 },
   actions: {
+
     poemCreate (data){
-      // console.log('at poemCreate in poem.js')
-      // console.log(this.get('store'))
       let newPoem = this.get('store').createRecord('poem', data)
-      // console.log('new poem', newPoem)
       newPoem.save()
       .then(() => {
         this.get('flashMessages')
@@ -23,35 +20,29 @@ export default Ember.Route.extend({
         .danger('There was a problem. Please try again and write a new Haiku.');
       });
   },
+
   deletePoem(data) {
-    // console.log('at poem delete in poem.js')
     data.destroyRecord()
     .then(() => {
       this.get('flashMessages')
-      .success('Your poem is gone.');
+      .success('Your Haiku has been deleted.');
     })
     .catch(() => {
       this.get('flashMessages')
-      .danger('There was a problem, the poem persists');
+      .danger('There was a problem, your Haiku was not deleted');
     });
   },
-  poemCount(){
-    let poems = this.store.findAll('Poem')
-    console.log('they are', this.get('model.length'))
-    console.log('they are', this.get('poems.length'))
-  },
+
   publish(poem, status) {
-    // console.log('in publish poem in poem.js', poem)
-    // console.log('it is', poem.get('published'))
     poem.save()
     .then(() => {
       this.get('flashMessages')
-      .success('Your haiku has been ' + status);
+      .success('Your Haiku has been ' + status);
     })
     .catch(() => {
       this.get('flashMessages')
       .danger('There was a problem. No changes have been made.');
     });
   }
-}
+  }
 });

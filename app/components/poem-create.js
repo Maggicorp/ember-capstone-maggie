@@ -7,6 +7,7 @@ export default Ember.Component.extend({
     secondline: null,
     thirdline: null
   },
+
   onInit: function(){
     $('.syllables').css('display', 'none')
     this.set('newPoem.title', null);
@@ -14,7 +15,9 @@ export default Ember.Component.extend({
     this.set('newPoem.secondline', null);
     this.set('newPoem.thirdline', null);
   }.on("init"),
+
   actions: {
+
     dataLine1() {
       let newPoem = this.get('newPoem');
       let word = newPoem.firstline
@@ -22,7 +25,6 @@ export default Ember.Component.extend({
         this.get('flashMessages')
         .danger('Error, input a word to get the syllables count')
         $('.syllables').css('display', 'none')
-
         return
       }
       $('.sword').text('')
@@ -34,9 +36,11 @@ export default Ember.Component.extend({
       for (let i=0; i < length; i++) {
         let thisWord = wordArray[i]
         thisWord = thisWord.replace(/\W$/, "");
+        thisWord = thisWord.replace(/\d$/, "");
       this.sendAction('callapi', thisWord);
       }
     },
+
     dataLine2() {
       let newPoem = this.get('newPoem')
       let word = newPoem.secondline
@@ -54,9 +58,11 @@ export default Ember.Component.extend({
       for (let i=0; i < length; i++) {
         let thisWord = wordArray[i]
         thisWord = thisWord.replace(/\W$/, "");
+        thisWord = thisWord.replace(/\d$/, "");
       this.sendAction('callapi', thisWord);
       }
     },
+
     dataLine3() {
       let newPoem = this.get('newPoem')
       let word = newPoem.thirdline
@@ -74,11 +80,12 @@ export default Ember.Component.extend({
       for (let i=0; i < length; i++) {
         let thisWord = wordArray[i]
         thisWord = thisWord.replace(/\W$/, "");
+        thisWord = thisWord.replace(/\d$/, "");
         this.sendAction('callapi', thisWord);
       }
     },
+
     submit() {
-      // console.log('after on submit')
       let data =
       this.get('newPoem')
       if(data.firstline === null || data.secondline === null || data.thirdline === null) {
@@ -86,25 +93,19 @@ export default Ember.Component.extend({
         .danger('Error, please include a valid input for all three lines')
         return
       }
-      // console.log('data is', data)
       this.sendAction('poemCreate', data);
       this.set('newPoem.title', null);
       this.set('newPoem.firstline', null);
       this.set('newPoem.secondline', null);
       this.set('newPoem.thirdline', null);
     },
+
     getTheme() {
-      console.log('in theme')
-      const themes = ['summer', 'trees', 'birds', 'sunshine', 'lakes', 'pond', 'snow', 'stone', 'winter', 'fall', 'autumn', 'rain', 'birds', 'deer', 'cold', 'hot', 'warm', 'moon', 'sun']
+      const themes = ['summer time', 'trees in the rain', 'birds singing', 'sunshine and icecream', 'lakes with kayaks', 'ponds full of fish', 'freshly fallen snow', 'a stone castle', 'winter in the country', 'fall in New England', 'picking apples in autumn', 'rain falling softly', 'cats taking a nap', 'deer eating flowers', 'cold weather and hot coffee', 'hot summer days', 'warm socks', 'howling at the moon', 'fun in the sun']
       const themesLength = themes.length
       const randNum = Math.floor(Math.random() * themesLength)
       const newTheme = themes[randNum]
       $('.theme').text(newTheme)
     },
-    getPicture () {
-      location.reload()
-    }
   }
   })
-
-  // need to get better user data
