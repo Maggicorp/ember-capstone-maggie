@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // auth: Ember.inject.service(),
   model(){
     const poems = this.store.findAll('Poem', {backgroundReload: true});
     return poems;
@@ -9,7 +8,7 @@ export default Ember.Route.extend({
   actions: {
 
     poemCreate (data){
-      let newPoem = this.get('store').createRecord('poem', data)
+      let newPoem = this.get('store').createRecord('poem', data);
       newPoem.save()
       .then(() => {
         this.get('flashMessages')

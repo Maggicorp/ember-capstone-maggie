@@ -4,7 +4,7 @@ export default Ember.Component.extend({
 
  actions: {
    poemCreate(data) {
-     this.sendAction('poemCreate', data)
+     this.sendAction('poemCreate', data);
    },
  }
 });
