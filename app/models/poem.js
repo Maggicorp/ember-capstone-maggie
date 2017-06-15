@@ -6,6 +6,7 @@ export default DS.Model.extend({
   firstline: DS.attr('string'),
   secondline: DS.attr('string'),
   thirdline: DS.attr('string'),
+  published: DS.attr('boolean'),
   // validations: {
   //   firstline: {
   //     presence: true

@@ -14,6 +14,7 @@ Router.map(function() {
   // this.route('users');
   this.route('poem-edit', { path: 'poem/:poem_id/edit'});
   this.route('create', { path: 'poem/create'});
+  this.route('published');
 });
 
 export default Router;

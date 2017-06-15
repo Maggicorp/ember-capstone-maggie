@@ -9,6 +9,9 @@
 
     {{#link-to 'poem-edit' poem}}<button type="button" class="btn btn-info btn-sm">Edit</button>{{/link-to}}
 
+    <button type="button" class="btn btn-info btn-sm" {{action 'publish'}}>Publish</button>
+
+
     {{#if poem.title}}
   <button type="button" class="btn btn-secondary btn-sm"><a href="mailto:?subject=My%20Haiku%20~%20{{poem.title}}&amp;body={{poem.title}}%0D%0A%0D%0A{{poem.firstline}}%0D%0A{{poem.secondline}}%0D%0A{{poem.thirdline}}%0D%0A%0D%0AI%20wrote%20this%20haiku%20at%20https://maggicorp.github.io/ember-capstone-maggie/">email</a></button>
     {{else}}
