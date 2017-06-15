@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model(){
     // console.log('get all poems', this.get('store').findAll('Poem'));
     const poems = this.store.findAll('Poem', {backgroundReload: true});
-    console.log('it the model the poems are', poems)
+    // console.log('it the model the poems are', poems)
     return poems;
 },
   actions: {
@@ -40,17 +40,17 @@ export default Ember.Route.extend({
     console.log('they are', this.get('model.length'))
     console.log('they are', this.get('poems.length'))
   },
-  publish(poem) {
-    console.log('in publish poem in poem.js', poem)
-    console.log('it is', poem.get('published'))
+  publish(poem, status) {
+    // console.log('in publish poem in poem.js', poem)
+    // console.log('it is', poem.get('published'))
     poem.save()
     .then(() => {
       this.get('flashMessages')
-      .success('It saved');
+      .success('Your haiku has been ' + status);
     })
     .catch(() => {
       this.get('flashMessages')
-      .danger('There was a problem. It did not save');
+      .danger('There was a problem. No changes have been made.');
     });
   }
 }

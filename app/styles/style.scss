@@ -3,6 +3,16 @@ body {
   font-family: 'Josefin Slab', serif;
 }
 
+.published {
+  text-align: center;
+  background-color: #e5e5ff;
+  margin: 5px auto;
+  border-radius: 5px;
+  padding: 10px;
+  border: 3px white solid;
+  box-shadow: 2px 2px 4px 0 #ccc;
+}
+
 .banner {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Animal_Kingdom_banner_Tree_of_Life.jpg');
   background-repeat: no-repeat;
@@ -49,16 +59,7 @@ body {
   border: 3px white solid;
   box-shadow: 2px 2px 4px 0 #ccc;
 }
-// .title {
-//   padding-bottom: 10px;
-//   margin-bottom: 10px;
-// }
-//
-// .p {
-//   padding-bottom: 10px;
-//    margin-bottom: 10px;
-      // height: 5px;
-// }
+
 .empty {
   width: 10px;
 }
@@ -144,8 +145,6 @@ body {
 .example {
   margin-left: 30px;
 }
-
-
 
 .edit {
   background-color: #9DE0AD ;
