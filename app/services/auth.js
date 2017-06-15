@@ -6,6 +6,11 @@ export default Ember.Service.extend({
   credentials: storageFor('auth'),
   isAuthenticated: Ember.computed.bool('credentials.token'),
 
+  getPublished () {
+    return this.get('ajax').request('/published', {
+      data: {}
+    })
+  },
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {
       data: {

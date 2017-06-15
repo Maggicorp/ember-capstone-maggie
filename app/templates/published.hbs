@@ -1,1 +1,16 @@
-<button {{action 'getPublished'}}>button</button>
+{{!-- <button {{action 'getPublished'}}>button</button> --}}
+
+<div class='published'>
+  <h2>Published Haiku</h2>
+<div class="masory">
+{{#each model.poems as |poem|}}
+<div class="haiku">
+  <h4>{{poem.title}}</h4>
+  <h5>{{poem.firstline}}</h5>
+  <h5>{{poem.secondline}}</h5>
+  <h5>{{poem.thirdline}}</h5>
+</div>
+  {{/each}}
+
+</div>
+</div>
