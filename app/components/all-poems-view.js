@@ -17,14 +17,11 @@ export default Ember.Component.extend({
         let poem = this.get('poem')
         this.set('poem.published', true)
         this.sendAction('publish', this.get('poem'))
-        // console.log('in publish')
-        // let poem = this.get('poem')
-        // console.log('it is', poem.get('published'))
-        // // let published = poem.get('published')
-        // this.set('poem.published', true)
-        // poem.save()
-        // console.log('it is', poem.get('published'))
-        // this.sendAction('publish', poem)
+      },
+      unpublish() {
+        let poem = this.get('poem')
+        this.set('poem.published', false)
+        this.sendAction('publish', this.get('poem'))
       }
     }
 });
